@@ -5,7 +5,7 @@ var dotenv = {
   password: process.env.DB_PASS
 };
 
-var localRoute = 'mongodb://localhost/collegepromptsanddeadlines';
+//var localRoute = 'mongodb://localhost/collegepromptsanddeadlines';
 var mLabRoute = `mongodb://${dotenv.username}:${dotenv.password}@ds161574.mlab.com:61574/college_app`;
 
 mongoose.connect(mLabRoute);

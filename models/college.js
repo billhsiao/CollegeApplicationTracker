@@ -1,0 +1,41 @@
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var ObjectId = Schema.Types.ObjectId;
+
+var collegeSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  essayType: {
+    type: String,
+    enum: ['Coalition', 'CommonApp', 'Separate']
+  },
+  deadline: {
+    type: String,
+    required: true
+  },
+  earlyDecision: {
+    type: Boolean,
+  },
+  mainPrompt: {
+    type: String,
+  },
+  mainEssay: {
+    type: String,
+  },
+
+  drafts: [{type: ObjectId, ref: 'Drafts'}],
+
+  supplementaryPrompt: {
+    type: String,
+  },
+  supplementaryEssay: {
+    type: String,
+  },
+
+}, {
+  timestamps: true
+});
+
+module.exports = mongoose.model('College', collegeSchema);

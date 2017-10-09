@@ -1,0 +1,26 @@
+<form action="/colleges<%= college.name ? '/' + college.id + '?_method=PUT' : '' %>" method="post">
+  <label>
+    <input type="text" class="name" type="text" name="name" value="<%= college.name ? college.name : '' %>" placeholder="college name+">
+  </label><br>
+  <label>
+    <input type="text" name="deadline" value="<%= college.deadline ? college.deadline : '' %>" placeholder="deadline">
+  </label><br>
+  <label>
+    <select name="essayType">
+      <option value="Coalition" <%= college.essayType === 'Coalition' ? 'selected' : '' %> >Coalition</option>
+      <option value="CommonApp" <%= college.essayType === 'CommonApp' ? 'selected' : '' %> >CommonApp</option>
+      <option value="Other" <%= college.essayType === 'Other' ? 'selected' : '' %> >other</option>
+    </select>
+</label>
+<!-- <label>
+  <textarea class="prompts" type="text" name="mainPrompt" value="<%= college.mainPrompt ? college.mainPrompt : '' %>" placeholder="essay contents"></textarea>
+</label><br>
+<label>
+  <input class="prompts" type="text" name="supplementaryPrompt" value="<%= college.supplementaryPrompt ? college.supplementaryPrompt : '' %>" placeholder="supplementary">
+</label><br> -->
+
+  <label>Early decision:
+  <input type="checkbox" name="earlyDecision" <%= college.earlyDecision ? 'checked' : '' %> >
+</label><br>
+  <input type="submit" value="<%= college.name ? 'Update' : 'Add' %> college">
+</form>

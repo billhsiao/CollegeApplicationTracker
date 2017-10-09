@@ -1,0 +1,33 @@
+<% include ../partials/head %>
+<body>
+<a href="/">Back</a>
+
+
+<h1><%= college.name %></h1>
+<br>
+
+<%= college.deadline %>
+<br>
+mainprompt
+<br>
+<div id="prompt" contenteditable="true">
+
+  <script>
+  var handler = {
+    pull:function() {
+      console.log('hi!');
+    },
+    render:function() {
+
+    }
+  }
+  document.getElementById('prompt').addEventListener('onchange', handler.pull);
+<%= college.mainPrompt %>
+</script>
+</div>
+<br>
+<div>supplementary prompt</div>
+<%= college.supplementaryPrompt %>
+
+</body>
+</html>

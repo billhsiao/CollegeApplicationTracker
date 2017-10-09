@@ -1,0 +1,18 @@
+<% include ../partials/head %>
+<body>
+  <h1>College Counseling</h1>
+  <a href="/colleges/new">Colleges+</a>&nbsp;&nbsp;</nbsp><a href="/essay/index">Essays+</a>
+  <% colleges.forEach(function(college) { %>
+  <div id="name">
+    <a href="/colleges/<%= college.id %>/expand">
+      <%= college.name %>
+    </a>
+    </div>
+    <div>
+    <a href="/colleges/<%= college.id %>/edit">edit</a> |
+    <a href="/colleges/<%= college.id %>?_method=DELETE">delete</a> | <%= college.earlyDecision ? 'early decision' : '' %></div>
+    <div><%= college.essayType %> due <%= college.deadline %></div>
+  <br>
+    <% }); %>
+</body>
+</html>

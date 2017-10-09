@@ -20,7 +20,7 @@ db.once('open', function() {
 
 db.on('error', function(err) {
   console.error(`Database error:\n${err}`);
-  reconnect();
+  //reconnect();
 });
 
 

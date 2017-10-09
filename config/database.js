@@ -25,5 +25,5 @@ db.on('error', function(err) {
 
 
 function reconnect() {
-  mongoose.connect(localRoute);
+  //mongoose.connect(localRoute);
 }
